@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🧠 صفحة النفسية</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 300px;
+      background: #2c3e50;
+      color: white;
+      overflow-y: auto;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tip {
+      padding: 12px;
+      margin-bottom: 10px;
+      background: #34495e;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .tip:hover {
+      background: #1abc9c;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+      background: #ffffff;
+    }
+
+    .content h3 {
+      color: #2c3e50;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .home-button {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+
+    .home-button:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>نصائح لتحسين النفسية</h2>
+    <div class="tip" onclick="showTip(0)">تنفس بعمق</div>
+    <div class="tip" onclick="showTip(1)">ابتسم للحياة</div>
+    <div class="tip" onclick="showTip(2)">اكتب يومياتك</div>
+    <div class="tip" onclick="showTip(3)">مارس رياضة خفيفة</div>
+    <div class="tip" onclick="showTip(4)">تحدث مع صديق</div>
+    <div class="tip" onclick="showTip(5)">تأمل لدقائق</div>
+    <div class="tip" onclick="showTip(6)">استمع لموسيقى مريحة</div>
+    <div class="tip" onclick="showTip(7)">رتب غرفتك</div>
+    <div class="tip" onclick="showTip(8)">اكتب ٣ أشياء ممتن لها</div>
+    <div class="tip" onclick="showTip(9)">لا تؤجل المهام البسيطة</div>
+    <div class="tip" onclick="showTip(10)">خصص وقتاً للراحة</div>
+    <div class="tip" onclick="showTip(11)">اقرأ كتاب تحبه</div>
+    <div class="tip" onclick="showTip(12)">احترم مشاعرك</div>
+    <div class="tip" onclick="showTip(13)">قل لا عند الحاجة</div>
+    <div class="tip" onclick="showTip(14)">ابتعد عن السوشيال ميديا مؤقتًا</div>
+  </div>
+
+  <div class="content" id="content">
+    <h3>مرحبا بك! 🌟</h3>
+    <p>اضغط على أي نصيحة من القائمة اليمنى لتظهر لك تفاصيل أكثر هنا.</p>
+    <a href="file:///C:/Users/Admin/Desktop/%C2%A0/HGFVHL%C2%A8J/%D9%85%D9%88%D9%82%D8%B9%20%D8%B3%D9%87%D9%84%D8%A9/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9" class="home-button">🏠 العودة إلى الصفحة الرئيسية</a>
+  </div>
+
+  <script>
+    const tips = [
+      {
+        title: "تنفس بعمق",
+        content: "عندما تشعر بالتوتر، خذ 5 أنفاس عميقة ببطء. هذا يخفف القلق ويعيد لك التركيز."
+      },
+      {
+        title: "ابتسم للحياة",
+        content: "الابتسامة البسيطة تحفز الدماغ على إطلاق هرمونات السعادة مثل السيروتونين."
+      },
+      {
+        title: "اكتب يومياتك",
+        content: "تدوين مشاعرك يساعدك على التعبير عما بداخلك والتخلص من التوتر."
+      },
+      {
+        title: "مارس رياضة خفيفة",
+        content: "حتى المشي لعشر دقائق يحسن مزاجك ويزيد نشاطك."
+      },
+      {
+        title: "تحدث مع صديق",
+        content: "مكالمة قصيرة مع شخص مقرب قد تغير يومك بالكامل."
+      },
+      {
+        title: "تأمل لدقائق",
+        content: "اجلس في مكان هادئ وركز على تنفسك لمدة خمس دقائق لتصفية ذهنك."
+      },
+      {
+        title: "استمع لموسيقى مريحة",
+        content: "الموسيقى الهادئة تخفف من التوتر وتعزز الاسترخاء."
+      },
+      {
+        title: "رتب غرفتك",
+        content: "ترتيب المكان من حولك يساهم بترتيب مشاعرك داخليًا."
+      },
+      {
+        title: "اكتب ٣ أشياء ممتن لها",
+        content: "الشعور بالامتنان يعزز الإيجابية ويحسن المزاج."
+      },
+      {
+        title: "لا تؤجل المهام البسيطة",
+        content: "إنجاز الأمور الصغيرة يمنحك شعوراً بالسيطرة والراحة النفسية."
+      },
+      {
+        title: "خصص وقتاً للراحة",
+        content: "أعطِ نفسك فترة استراحة بين المهام لتجدد طاقتك."
+      },
+      {
+        title: "اقرأ كتاب تحبه",
+        content: "القراءة تغذي العقل وتهربك من الضغوط اليومية."
+      },
+      {
+        title: "احترم مشاعرك",
+        content: "اسمح لنفسك بالشعور مهما كان، فكل المشاعر طبيعية."
+      },
+      {
+        title: "قل لا عند الحاجة",
+        content: "لا تشعر بالذنب لرفض أشياء ترهقك أو لا تناسبك."
+      },
+      {
+        title: "ابتعد عن السوشيال ميديا مؤقتًا",
+        content: "إيقاف تصفح مواقع التواصل لفترة ينعش عقلك ويقلل التوتر."
+      }
+    ];
+
+    function showTip(index) {
+      const contentDiv = document.getElementById('content');
+      contentDiv.innerHTML = `
+        <h3>📝 ${tips[index].title}</h3>
+        <p>${tips[index].content}</p>
+        <a href="file:///C:/Users/Admin/Desktop/٪C2%A0/HGFVHL٪C2%A8J/موقع%20سهلة/الصفحة%20الرئيسية" class="home-button">🏠 العودة إلى الصفحة الرئيسية</a>
+      `;
+    }
+  </script>
+
+</body>
+</html>
